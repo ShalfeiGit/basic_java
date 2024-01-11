@@ -11,8 +11,10 @@ public class DataTypes {
     double f = 10.0;
     boolean j = true;
     char h = 'A';
+    char h2 = 65;
+    char h3 = '\uffff';
 
-    System.out.println(a + " " + b + " " + d  + " " + c + " " + d + " " + e + " " + f + " " + j + " " + h);
+    System.out.println(a + " " + b + " " + d  + " " + c + " " + d + " " + e + " " + f + " " + j + " " + h + " " + h2 + " " + h3);
 
     //Reference data types
     String k = "Hello";
