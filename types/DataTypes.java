@@ -1,6 +1,6 @@
 package types;
 
-public class Data_types {
+public class DataTypes {
   public static void main(String[] args) {
     //Primitive data types
     int a = 10;
@@ -20,6 +20,12 @@ public class Data_types {
 
     //Array data types
     int[] l = {10, 20, 30};
+    int[] l1 = new int[]{10, 20, 30};
+    int[] l2 = new int[3];
+
     System.out.println(l);
+    System.out.println(l1);
+    System.out.println(l2);
+
   }
 }
