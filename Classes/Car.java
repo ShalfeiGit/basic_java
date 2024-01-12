@@ -1,9 +1,10 @@
 package Classes;
 
-public class Car extends AbstractCar implements InnerCar {
+public class Car extends AbstractCar implements Cloneable, InnerCar {
   int doors;
   int whiles;
   String brand;
+ 
   Car(int doors, int whiles, String brand) {
     this.doors = doors;
     this.whiles = whiles;
@@ -13,9 +14,11 @@ public class Car extends AbstractCar implements InnerCar {
   Car(){
     this(4, 4, "Haval");
   }
+
   public String drive() {
     return "vroom";
-}
+  }
+  
 }
 
 class SubCar extends Car {
