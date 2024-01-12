@@ -1,4 +1,4 @@
-package ControlStructures_2;
+package ControlStructures;
 
 public class ControlStructures {
 
