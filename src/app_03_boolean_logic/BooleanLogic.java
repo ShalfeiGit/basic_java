@@ -1,4 +1,4 @@
-package app_04_boolean_logic;
+package app_03_boolean_logic;
 
 public class BooleanLogic {
     public static void main(String[] args) {

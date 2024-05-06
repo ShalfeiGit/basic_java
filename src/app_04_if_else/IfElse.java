@@ -1,4 +1,4 @@
-package app_05_if_else;
+package app_04_if_else;
 
 public class IfElse {
     public static void main(String[] args) {

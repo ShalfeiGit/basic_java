@@ -1,4 +1,4 @@
-package app_02_primitive_data_types;
+package app_01_primitive_data_types;
 
 public class PrimitiveDataTypes {
     public static void main(String[] args) {

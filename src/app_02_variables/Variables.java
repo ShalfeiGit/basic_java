@@ -1,4 +1,4 @@
-package app_03_variables;
+package app_02_variables;
 
 public class Variables {
     public static void main(String[] args) {
