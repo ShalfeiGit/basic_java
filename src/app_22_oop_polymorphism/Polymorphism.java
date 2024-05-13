@@ -18,7 +18,7 @@ abstract class Animal{
     public String getName(){
         return name;
     };
-    public abstract String setName(String name);
+    public abstract void setName(String name);
 
 //    public static void showAnimals(Animal[] animals) {
 //        for(Animal animal : animals){
@@ -27,6 +27,9 @@ abstract class Animal{
 //    };
     public static void showAnimals(Animal... animals) {
         for(Animal animal : animals){
+            if(animal instanceof Cat){ // проверка на пренадлежность классу
+                ((Cat) animal).setName("Cat: " + animal.name + "2"); // кастинг класса для инстанса
+            }
             System.out.println(animal.getName());
         }
     };
@@ -38,16 +41,16 @@ abstract class Animal{
 class Cat extends Animal {
 
     @Override
-    public String setName(String name) {
-        return this.name = "Cat: " + name;
+    public void setName(String name) {
+        this.name = name;
     }
 }
 
 class Dog extends Animal {
 
     @Override
-    public String setName(String name) {
-        return this.name = "Dog: " + name;
+    public void setName(String name) {
+        this.name = "Dog: " + name;
     }
 }
 
