@@ -22,54 +22,42 @@ public class Sorting {
         arrayList2.add(5);
 
 
-        List<Integer> arrayList3 = new ArrayList<>();
-        arrayList3.add(1);
-        arrayList3.add(2);
-        arrayList3.add(6);
-        arrayList3.add(3);
-        arrayList3.add(5);
-
-
-        List<Pet> arrayList4 = new ArrayList<>();
+        List<Pet> arrayList3 = new ArrayList<>();
         Pet pet1 = new Pet(1,"Vaska");
         Pet pet2 = new Pet(3,"Tuzik");
         Pet pet3 = new Pet(2, "Bulka");
         Pet pet4 = new Pet(4,"Korzhik");
-        arrayList4.add(pet1);
-        arrayList4.add(pet2);
-        arrayList4.add(pet3);
-        arrayList4.add(pet4);
+        arrayList3.add(pet1);
+        arrayList3.add(pet2);
+        arrayList3.add(pet3);
+        arrayList3.add(pet4);
 
-        List<Pet> arrayList5 = new ArrayList<>();
+        List<Pet> arrayList4 = new ArrayList<>();
         Pet pet5 = new Pet(1,"Vaska");
         Pet pet6 = new Pet(3,"Tuzik");
         Pet pet7 = new Pet(2, "Bulka");
         Pet pet8 = new Pet(4,"Korzhik");
-        arrayList5.add(pet5);
-        arrayList5.add(pet6);
-        arrayList5.add(pet7);
-        arrayList5.add(pet8);
+        arrayList4.add(pet5);
+        arrayList4.add(pet6);
+        arrayList4.add(pet7);
+        arrayList4.add(pet8);
 
         //Вариант первый
-        arrayList1.sort((o1, o2) -> o1 - o2);
+        arrayList1.sort((o1, o2) -> Integer.compare(o1, o2));
 
         //Вариант второй
-        arrayList2.sort((o1, o2) -> Integer.compare(o1, o2));
+        Collections.sort(arrayList2);
 
         //Вариант третий
         Collections.sort(arrayList3);
 
-        //Вариант четвёртый
-        Collections.sort(arrayList4);
-
-        //Вариант пятый
-        Collections.sort(arrayList5, new PetComparator());
+        //Вариант четвертый
+        Collections.sort(arrayList4, new PetComparator());
 
         System.out.println(arrayList1);
         System.out.println(arrayList2);
         System.out.println(arrayList3);
         System.out.println(arrayList4);
-        System.out.println(arrayList5);
     }
 }
 
