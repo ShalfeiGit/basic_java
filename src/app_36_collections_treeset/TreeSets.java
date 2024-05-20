@@ -1,10 +1,12 @@
-package app_33_collections_treemap;
+package app_36_collections_treeset;
+
 
 import java.util.*;
 
-public class TreeMaps {
+public class TreeSets {
     public static void main(String[] args) {
-        Map<Integer, Pet> treeMap = new TreeMap<>(); // строит красно бело дерево
+
+        Set<Pet> treeSet = new TreeSet<>(); // строит красно бело дерево
 
         Pet pet1 = new Pet(1,"Vaska");
         Pet pet2 = new Pet(3,"Tuzik");
@@ -13,25 +15,24 @@ public class TreeMaps {
         Pet pet5 = new Pet(5,"Laska");
         Pet pet6 = new Pet(6,"Ghorik");
 
-        treeMap.put(pet1.getId(), pet1);
-        treeMap.put(pet2.getId(), pet2);
-        treeMap.put(pet3.getId(), pet3);
-        treeMap.put(pet4.getId(), pet4);
-        treeMap.put(pet5.getId(), pet5);
-        treeMap.put(pet6.getId(), pet6);
+        treeSet.add(pet1);
+        treeSet.add(pet2);
+        treeSet.add(pet3);
+        treeSet.add(pet4);
+        treeSet.add(pet5);
+        treeSet.add(pet6);
 
-        for(Map.Entry<Integer, Pet> pet: treeMap.entrySet()){
+        for(Pet pet: treeSet){
             System.out.print(pet + " ");
         }
         System.out.println();
-        treeMap.values().iterator().forEachRemaining(pet -> System.out.print(pet + " "));
+        treeSet.iterator().forEachRemaining(pet -> System.out.print(pet + " "));
         System.out.println();
-        treeMap.remove(1);
-        System.out.println(treeMap.size());
-        treeMap.keySet().iterator().forEachRemaining(id -> System.out.print(id + " "));
+        treeSet.remove(1);
+        System.out.println(treeSet.size());
+        treeSet.iterator().forEachRemaining(id -> System.out.print(id + " "));
         System.out.println();
-        System.out.println(treeMap.get(2));
-        treeMap.forEach((key, pet) -> System.out.println(pet + " "));
+        treeSet.forEach(pet -> System.out.println(pet + " "));
     }
 }
 
@@ -73,4 +74,3 @@ class Pet {
         return name;
     }
 }
-

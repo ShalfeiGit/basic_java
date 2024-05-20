@@ -1,37 +1,33 @@
-package app_33_collections_treemap;
+package app_35_collections_linkedhashset;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.Objects;
+import java.util.Set;
 
-public class TreeMaps {
+public class LinkedHashSets {
     public static void main(String[] args) {
-        Map<Integer, Pet> treeMap = new TreeMap<>(); // строит красно бело дерево
-
+        Set<Pet> linkedHashSet = new LinkedHashSet<>(); // Порядок при итерации по map не гарантируется
         Pet pet1 = new Pet(1,"Vaska");
         Pet pet2 = new Pet(3,"Tuzik");
         Pet pet3 = new Pet(2, "Bulka");
         Pet pet4 = new Pet(4,"Korzhik");
-        Pet pet5 = new Pet(5,"Laska");
-        Pet pet6 = new Pet(6,"Ghorik");
+        linkedHashSet.add(pet1);
+        linkedHashSet.add(pet2);
+        linkedHashSet.add(pet3);
+        linkedHashSet.add(pet4);
 
-        treeMap.put(pet1.getId(), pet1);
-        treeMap.put(pet2.getId(), pet2);
-        treeMap.put(pet3.getId(), pet3);
-        treeMap.put(pet4.getId(), pet4);
-        treeMap.put(pet5.getId(), pet5);
-        treeMap.put(pet6.getId(), pet6);
-
-        for(Map.Entry<Integer, Pet> pet: treeMap.entrySet()){
+        for (Pet pet: linkedHashSet) {
             System.out.print(pet + " ");
         }
         System.out.println();
-        treeMap.values().iterator().forEachRemaining(pet -> System.out.print(pet + " "));
+        linkedHashSet.iterator().forEachRemaining(pet -> System.out.print(pet + " "));
         System.out.println();
-        treeMap.remove(1);
-        System.out.println(treeMap.size());
-        treeMap.keySet().iterator().forEachRemaining(id -> System.out.print(id + " "));
+        linkedHashSet.remove(1);
+        System.out.println(linkedHashSet.size());
+        linkedHashSet.iterator().forEachRemaining(id -> System.out.print(id + " "));
         System.out.println();
-        System.out.println(treeMap.get(2));
-        treeMap.forEach((key, pet) -> System.out.println(pet + " "));
+        linkedHashSet.forEach(pet -> System.out.print(pet + " "));
     }
 }
 
@@ -73,4 +69,3 @@ class Pet {
         return name;
     }
 }
-

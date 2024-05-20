@@ -10,8 +10,24 @@ public class LinkedHashMaps {
         Person person2 = new Person("Petr", 21, 3);
         Person person3 = new Person("Andrew", 16, 2);
 
-        Map<Integer, Person> map = new LinkedHashMap<>(); // ѕор€док при итерации по map гарантируетс€
+        Map<Integer, Person> linkedHashMap = new LinkedHashMap<>(); // ѕор€док при итерации по map гарантируетс€
 
+        linkedHashMap.put(person1.getId(), person1);
+        linkedHashMap.put(person2.getId(), person2);
+        linkedHashMap.put(person3.getId(), person3);
+
+        for(Map.Entry<Integer, Person> person: linkedHashMap.entrySet()){
+            System.out.print(person + " ");
+        }
+        System.out.println();
+        linkedHashMap.values().iterator().forEachRemaining(pet -> System.out.print(pet + " "));
+        System.out.println();
+        linkedHashMap.remove(1);
+        System.out.println(linkedHashMap.size());
+        linkedHashMap.keySet().iterator().forEachRemaining(id -> System.out.print(id + " "));
+        System.out.println();
+        System.out.println(linkedHashMap.get(2));
+        linkedHashMap.forEach((key, person) -> System.out.println(person + " "));
     }
 }
 

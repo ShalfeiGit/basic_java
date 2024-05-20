@@ -1,6 +1,5 @@
-package app_29_collwctions_linked_list;
+package app_29_collections_linked_list;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
