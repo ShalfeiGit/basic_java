@@ -35,6 +35,9 @@ public class Collections {
         System.out.println();
         List<String> list_5 = Stream.of(new Pet("Juk"), new Pet("Kol"), new Pet("Loki")).flatMap(x -> Stream.of(x.getName())).collect(Collectors.toList()); //flatMap - деаем из потока одних данных, поток других данных
         System.out.println(list_5);
+
+        Stream<String> list_6 = Stream.of("a", "b");
+        Stream.concat(list_6, Stream.of("c")).forEach(System.out::print);
     }
 }
 

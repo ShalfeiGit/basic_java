@@ -10,10 +10,10 @@ public class Optionals {
                 .reduce("", (acc, letter) -> letter == "c" ? letter : acc); // "" - начальное значение, преобразует в NotNullable (не нужен Optional)
         System.out.println(list);
         Optional<String> list2 = Stream.of("b", "a", "d", "c")
-                .reduce((acc, letter) -> letter == "j" ? letter : acc); // использует первое значение в качестве начсального
+                .reduce((acc, letter) -> letter == "j" ? letter : acc); // использует первое значение в качестве начального
         System.out.println(list2);
         Optional<String> test = Stream.of("c", "a", "d", "l")
-                .reduce((acc, letter) -> letter != "d" ? letter : acc);// reduce - преобразует к термирналmному значению
+                .reduce((acc, letter) -> letter != "d" ? letter : acc);// reduce - преобразует к термирнальному значению
         System.out.println(test.isPresent());
         test.ifPresent(o -> System.out.println(o)); // запустить если есть
         test.ifPresentOrElse(o -> {System.out.println("o1");}, () -> { System.out.println("o2"); }); // Либ одно запусти, либ другое

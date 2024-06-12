@@ -9,6 +9,8 @@ public class Exceptions {
             TestException.test2();
         } catch (RuntimeException e) {
             System.err.println(e.getMessage()); // выод ошибки в одном потоке - System.out.println, дрйгой поток
+            e.printStackTrace(); // аналог вывода ошибки
+
         }
         TestException.test3();
     }
