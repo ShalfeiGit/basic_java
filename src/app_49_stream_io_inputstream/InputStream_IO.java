@@ -3,6 +3,7 @@ package app_49_stream_io_inputstream;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Scanner;
 
 public class InputStream_IO {
     public static void main(String[] args) throws IOException { // inputstream предназначен для работы с любым потоком байт
@@ -35,6 +36,12 @@ public class InputStream_IO {
             }
             // наиболее современный вариант чтения
             Files.readAllLines(file_2).stream().forEach(line -> System.out.println(line));
+
+            // устаревший вариант считывания
+            Scanner scanner = new Scanner(file_2);
+            while (scanner.hasNext()){
+                System.out.println(scanner.next());
+            }
         }
 
     }
