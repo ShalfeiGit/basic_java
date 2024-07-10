@@ -10,21 +10,26 @@ public class Threads {
         Thread myThread_3 = new Thread(() -> {Thread.currentThread().setName("LambdaThread");  System.out.println(Thread.currentThread().getName());});
 
         myThread_1.start(); // новый поток
-        myThread_1.join(); // заставить основной поток main дожидаться завершения потока mythread
-        myThread_1.interrupt(); // закрыть поток по его завершению, либо сам закроется по егозавершению
+        myThread_1.join(); // заставить основной поток main дожидаться завершения выполения внутреннего потока myThread_1
+        myThread_1.interrupt(); // попросить закрыть поток по его завершению
+
         myThread_2.start();
         myThread_2.join();
-        myThread_3.start();
-        myThread_3.join();
 
-        // 4- основной поток main
+        myThread_3.start();
+        myThread_3.join(100); // если myThread_3 не успеет выполнится за 100 мс, main все равно продолжит свое выполнение
+
+        // 4- основной поток main (создается автоматически при вызове метода main)
         System.out.println(Thread.currentThread().getName()); // исходный поток main
-        System.out.println(Thread.currentThread().getState()); // получить состтояние потока  (NEW - создан, RUNNABLE - запущен, BLOCKED - блокирован дроугим потоком, WAITING - ожидает (join), TIME_WAITING - ожидает указанное колличество ms (join(100L)) TERMINATED- завершен)
+        System.out.println(Thread.currentThread().getState()); // получить состояние потока в котором вызывается метод
+        // (NEW - создан, RUNNABLE - запущен, BLOCKED - блокирован дроугим потоком, WAITING - ожидает (join),
+        // TIME_WAITING - ожидает указанное колличество ms (join(100L)) TERMINATED- завершен)
 
     }
 }
 
 class MyThread extends Thread {
+
     @Override
     public void run() {
         setName("CustomThread");
