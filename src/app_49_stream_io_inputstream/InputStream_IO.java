@@ -38,7 +38,7 @@ public class InputStream_IO {
             Files.readAllLines(file_2).stream().forEach(line -> System.out.println(line));
 
             // устаревший вариант считывания
-            Scanner scanner = new Scanner(file_2);
+            Scanner scanner = new Scanner(file_2); //new Scanner(System.in) для считвания из командной строки
             while (scanner.hasNext()){
                 System.out.println(scanner.next());
             }

@@ -13,6 +13,10 @@ public class Threads_Sharing_Inputs {
         List<Integer> list = new ArrayList<>();
         SynchronizeList sync_list1 = new SynchronizeList(new ArrayList<>());
         List<Integer> sync_list2 = Collections.synchronizedList(new ArrayList<>());
+        ThreadLocal<Integer> threadLocal = new ThreadLocal<>(); // можно шарить между потоками, запоминают set значение для каждого отдельного потока
+        threadLocal.set(10);
+        System.out.println(threadLocal.get());
+
 
         Thread thread_1 = new Thread(() -> { new ArrayList<Integer>(Arrays.asList(new Integer[1000])).stream().forEach(i -> counter.incrementCounter()); });
         Thread thread_2 = new Thread(() -> { new ArrayList<Integer>(Arrays.asList(new Integer[1000])).stream().forEach(i -> counter.incrementCounter()); });
